@@ -1,0 +1,711 @@
+# 1 "iec_std_functions.h"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 1 "<command-line>" 2
+# 1 "iec_std_functions.h"
+# 127 "iec_std_functions.h"
+__ANY_NUM(__convert_num_to_bool)
+__ANY_NBIT(__convert_num_to_bool)
+
+
+
+
+
+
+
+static inline BOOL TIME_TO_BOOL(BOOL EN, BOOL *ENO, TIME op){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return op.tv_sec == 0 && op.tv_nsec == 0 ? 0 : 1;}
+__ANY_DATE(__convert_time_to_bool)
+# 150 "iec_std_functions.h"
+__ANY_BIT(__to_anynum_)
+__ANY_BIT(__to_anynbit_)
+
+
+
+
+__ANY_INT(__to_anynum_)
+__ANY_INT(__to_anynbit_)
+
+
+
+
+__ANY_REAL(__to_anynbit_)
+
+
+
+
+__ANY_REAL(__to_anysint_)
+
+
+__ANY_REAL(__to_anyuint_)
+
+
+
+
+__ANY_REAL(__to_anyreal_)
+
+
+
+
+__ANY_BIT(__iec_)
+__ANY_INT(__iec_)
+
+
+__ANY_BIT(__to_anydate_)
+__ANY_INT(__to_anydate_)
+
+
+
+
+__ANY_REAL(__iec_)
+
+
+__ANY_REAL(__to_anydate_)
+
+
+
+
+__ANY_INT_1(__iec_,TIME)
+__ANY_NBIT_1(__iec_,TIME)
+__ANY_DATE(__to_anyint_)
+__ANY_DATE(__to_anynbit_)
+
+
+
+
+__ANY_REAL_1(__iec_,TIME)
+__ANY_DATE(__to_anyreal_)
+
+
+
+
+
+static inline DATE DT_TO_DATE(BOOL EN, BOOL *ENO, DT op){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_DATE; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return (DATE)__date_and_time_to_date(op);}
+static inline DATE DATE_AND_TIME_TO_DATE(BOOL EN, BOOL *ENO, DT op){
+ return DT_TO_DATE(EN, ENO, op);
+}
+static inline DT DT_TO_DT(BOOL EN, BOOL *ENO, DT op){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_DT; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return (DT)__move_DT(op);}
+static inline TOD DT_TO_TOD(BOOL EN, BOOL *ENO, DT op){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_TOD; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return (TOD)__date_and_time_to_time_of_day(op);}
+static inline DATE DATE_AND_TIME_TO_TIME_OF_DAY(BOOL EN, BOOL *ENO, DT op){
+ return DT_TO_TOD(EN, ENO, op);
+}
+
+static inline DATE DATE_TO_DATE(BOOL EN, BOOL *ENO, DATE op){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_DATE; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return (DATE)__move_DATE(op);}
+
+
+
+
+
+static inline TOD TOD_TO_TOD(BOOL EN, BOOL *ENO, TOD op){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_TOD; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return (TOD)__move_TOD(op);}
+# 238 "iec_std_functions.h"
+static inline TIME TIME_TO_TIME(BOOL EN, BOOL *ENO, TIME op){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_TIME; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return (TIME)__move_TIME(op);}
+
+
+
+static inline STRING BOOL_TO_STRING(BOOL EN, BOOL *ENO, BOOL op){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_STRING; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return (STRING)__bool_to_string(op);}
+
+__ANY_NBIT(__iec_)
+
+
+
+
+__ANY_SINT(__iec_)
+
+
+__ANY_UINT(__iec_)
+
+
+
+
+__ANY_REAL(__iec_)
+
+
+
+static inline STRING DATE_TO_STRING(BOOL EN, BOOL *ENO, DATE op){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_STRING; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return (STRING)__date_to_string(op);}
+static inline STRING DT_TO_STRING(BOOL EN, BOOL *ENO, DT op){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_STRING; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return (STRING)__dt_to_string(op);}
+static inline STRING TOD_TO_STRING(BOOL EN, BOOL *ENO, TOD op){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_STRING; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return (STRING)__tod_to_string(op);}
+
+
+static inline STRING TIME_TO_STRING(BOOL EN, BOOL *ENO, TIME op){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_STRING; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return (STRING)__time_to_string(op);}
+
+
+
+static inline BOOL STRING_TO_BOOL(BOOL EN, BOOL *ENO, STRING op){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return (BOOL)__string_to_bool(op);}
+
+__ANY_NBIT(__iec_)
+
+
+
+
+__ANY_SINT(__iec_)
+
+
+__ANY_UINT(__iec_)
+
+
+
+
+__ANY_REAL(__iec_)
+
+
+
+
+__ANY_DATE(__iec_)
+
+
+
+static inline TIME STRING_TO_TIME(BOOL EN, BOOL *ENO, STRING op){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_TIME; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return (TIME)__string_to_time(op);}
+# 303 "iec_std_functions.h"
+__ANY_REAL(__to_anyint_)
+# 316 "iec_std_functions.h"
+__ANY_UINT(__to_anynbit_)
+# 329 "iec_std_functions.h"
+__ANY_NBIT(__to_anyuint_)
+# 405 "iec_std_functions.h"
+__ANY_REAL(__abs_signed)
+__ANY_SINT(__abs_signed)
+__ANY_UINT(__abs_unsigned)
+
+
+
+
+
+
+__ANY_REAL(__sqrt)
+
+
+
+
+
+
+__ANY_REAL(__ln)
+
+
+
+
+
+
+__ANY_REAL(__log)
+
+
+
+
+
+
+__ANY_REAL(__exp)
+
+
+
+
+
+
+__ANY_REAL(__sin)
+
+
+
+
+
+
+__ANY_REAL(__cos)
+
+
+
+
+
+__ANY_REAL(__tan)
+
+
+
+
+
+
+__ANY_REAL(__asin)
+
+
+
+
+
+__ANY_REAL(__acos)
+
+
+
+
+
+__ANY_REAL(__atan)
+# 515 "iec_std_functions.h"
+__ANY_NUM(__add)
+# 524 "iec_std_functions.h"
+__ANY_NUM(__mul)
+
+
+
+
+
+
+__ANY_NUM(__sub)
+# 547 "iec_std_functions.h"
+__ANY_NUM(__div)
+# 564 "iec_std_functions.h"
+__ANY_INT(__mod)
+# 577 "iec_std_functions.h"
+__ANY_NUM(__in1_anyreal_)
+# 591 "iec_std_functions.h"
+__ANY(__iec_)
+# 600 "iec_std_functions.h"
+__ANY(__iec_)
+# 638 "iec_std_functions.h"
+__ANY_INT(__iec_)
+
+
+
+
+
+__ANY_INT(__in1_anynbit_)
+# 657 "iec_std_functions.h"
+__ANY_INT(__iec_)
+
+
+
+
+
+__ANY_INT(__in1_anynbit_)
+# 676 "iec_std_functions.h"
+__ANY_INT(__iec_)
+# 686 "iec_std_functions.h"
+__ANY_INT(__in1_anynbit_)
+# 699 "iec_std_functions.h"
+__ANY_INT(__iec_)
+# 709 "iec_std_functions.h"
+__ANY_INT(__in1_anynbit_)
+# 721 "iec_std_functions.h"
+static inline BOOL AND_BOOL(BOOL EN, BOOL *ENO, UINT param_count, BOOL op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); for (i = 0; i < param_count - 1; i++){ op1 = op1 && va_arg (ap, DWORD); } va_end (ap); return op1;}
+static inline BOOL AND__BOOL__BOOL(BOOL EN, BOOL *ENO, UINT param_count, BOOL op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); for (i = 0; i < param_count - 1; i++){ op1 = op1 && va_arg (ap, DWORD); } va_end (ap); return op1;}
+
+
+
+
+__ANY_NBIT(__iec_)
+
+
+
+
+
+static inline BOOL OR_BOOL(BOOL EN, BOOL *ENO, UINT param_count, BOOL op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); for (i = 0; i < param_count - 1; i++){ op1 = op1 || va_arg (ap, DWORD); } va_end (ap); return op1;}
+static inline BOOL OR__BOOL__BOOL(BOOL EN, BOOL *ENO, UINT param_count, BOOL op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); for (i = 0; i < param_count - 1; i++){ op1 = op1 || va_arg (ap, DWORD); } va_end (ap); return op1;}
+
+
+
+
+__ANY_NBIT(__iec_)
+# 762 "iec_std_functions.h"
+static inline BOOL XOR_BOOL(BOOL EN, BOOL *ENO, UINT param_count, BOOL op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); for (i = 0; i < param_count - 1; i++){ BOOL tmp = va_arg (ap, DWORD); op1 = (op1 && !tmp) || (!op1 && tmp); } va_end (ap); return op1; }
+static inline BOOL XOR__BOOL__BOOL(BOOL EN, BOOL *ENO, UINT param_count, BOOL op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); for (i = 0; i < param_count - 1; i++){ BOOL tmp = va_arg (ap, DWORD); op1 = (op1 && !tmp) || (!op1 && tmp); } va_end (ap); return op1; }
+# 776 "iec_std_functions.h"
+static inline BOOL NOT_BOOL(BOOL EN, BOOL *ENO, BOOL op1){
+  if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE);
+  return !op1;
+}
+
+
+static inline BOOL NOT__BOOL__BOOL(BOOL EN, BOOL *ENO, BOOL op1){
+  if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE);
+  return !op1;
+}
+
+
+
+
+
+
+
+__ANY_NBIT(__iec_)
+# 802 "iec_std_functions.h"
+__ANY_NBIT(__iec_)
+# 831 "iec_std_functions.h"
+__ANY(__iec_)
+# 840 "iec_std_functions.h"
+__ANY(__iec_)
+# 869 "iec_std_functions.h"
+__ANY_BIT(__iec_)
+__ANY_NUM(__iec_)
+
+
+
+
+
+
+__ANY_DATE(__iec_)
+static inline TIME MAX_TIME(BOOL EN, BOOL *ENO, UINT param_count, TIME op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_TIME; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); for (i = 0; i < param_count - 1; i++){ TIME tmp = va_arg (ap, TIME); op1 = __time_cmp(op1, tmp) < 0 ? tmp : op1; } va_end (ap); return op1;} static inline TIME MAX__TIME__TIME(BOOL EN, BOOL *ENO, UINT param_count, TIME op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_TIME; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); for (i = 0; i < param_count - 1; i++){ TIME tmp = va_arg (ap, TIME); op1 = __time_cmp(op1, tmp) < 0 ? tmp : op1; } va_end (ap); return op1;}
+
+
+
+
+
+static inline STRING MAX_STRING(BOOL EN, BOOL *ENO, UINT param_count, STRING op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_STRING; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); for (i = 0; i < param_count - 1; i++){ STRING tmp = va_arg (ap, STRING); op1 = memcmp((char*)&op1.body,(char*)&tmp.body, op1.len < tmp.len ? op1.len : tmp.len) < 0 ? tmp : op1; } va_end (ap); return op1;}
+static inline STRING MAX__STRING__STRING(BOOL EN, BOOL *ENO, UINT param_count, STRING op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_STRING; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); for (i = 0; i < param_count - 1; i++){ STRING tmp = va_arg (ap, STRING); op1 = memcmp((char*)&op1.body,(char*)&tmp.body, op1.len < tmp.len ? op1.len : tmp.len) < 0 ? tmp : op1; } va_end (ap); return op1;}
+# 894 "iec_std_functions.h"
+__ANY_NBIT(__iec_)
+__ANY_NUM(__iec_)
+
+
+
+
+
+
+__ANY_DATE(__iec_)
+static inline TIME MIN_TIME(BOOL EN, BOOL *ENO, UINT param_count, TIME op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_TIME; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); for (i = 0; i < param_count - 1; i++){ TIME tmp = va_arg (ap, TIME); op1 = __time_cmp(op1, tmp) > 0 ? tmp : op1; } va_end (ap); return op1;} static inline TIME MIN__TIME__TIME(BOOL EN, BOOL *ENO, UINT param_count, TIME op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_TIME; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); for (i = 0; i < param_count - 1; i++){ TIME tmp = va_arg (ap, TIME); op1 = __time_cmp(op1, tmp) > 0 ? tmp : op1; } va_end (ap); return op1;}
+
+
+
+static inline STRING MIN_STRING(BOOL EN, BOOL *ENO, UINT param_count, STRING op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_STRING; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); for (i = 0; i < param_count - 1; i++){ STRING tmp = va_arg (ap, STRING); op1 = memcmp((char*)&op1.body,(char*)&tmp.body, op1.len < tmp.len ? op1.len : tmp.len) > 0 ? tmp : op1; } va_end (ap); return op1;}
+static inline STRING MIN__STRING__STRING(BOOL EN, BOOL *ENO, UINT param_count, STRING op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_STRING; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); for (i = 0; i < param_count - 1; i++){ STRING tmp = va_arg (ap, STRING); op1 = memcmp((char*)&op1.body,(char*)&tmp.body, op1.len < tmp.len ? op1.len : tmp.len) > 0 ? tmp : op1; } va_end (ap); return op1;}
+# 926 "iec_std_functions.h"
+__ANY_NBIT(__iec_)
+__ANY_NUM(__iec_)
+# 948 "iec_std_functions.h"
+__ANY_DATE(__iec_)
+static inline TIME LIMIT_TIME(BOOL EN, BOOL *ENO, TIME MN, TIME IN, TIME MX){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_TIME; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return __time_cmp(IN, MN) > 0 ? __time_cmp(IN, MX) < 0 ? IN : MX : MN;} static inline TIME LIMIT__TIME__TIME__TIME__TIME(BOOL EN, BOOL *ENO, TIME MN, TIME IN, TIME MX){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_TIME; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return __time_cmp(IN, MN) > 0 ? __time_cmp(IN, MX) < 0 ? IN : MX : MN;}
+
+
+
+
+static inline STRING LIMIT_STRING(BOOL EN, BOOL *ENO, STRING MN, STRING IN, STRING MX){
+    if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_STRING; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE);
+    return memcmp((char*)&IN.body,(char*)&MN.body, IN.len < MN.len ? IN.len : MN.len) > 0 ? memcmp((char*)&IN.body,(char*)&MX.body, IN.len < MX.len ? IN.len : MX.len) < 0 ? IN : MX : MN;
+}
+
+
+static inline STRING LIMIT__STRING__STRING__STRING__STRING(BOOL EN, BOOL *ENO, STRING MN, STRING IN, STRING MX){
+    if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_STRING; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE);
+    return memcmp((char*)&IN.body,(char*)&MN.body, IN.len < MN.len ? IN.len : MN.len) > 0 ? memcmp((char*)&IN.body,(char*)&MX.body, IN.len < MX.len ? IN.len : MX.len) < 0 ? IN : MX : MN;
+}
+# 998 "iec_std_functions.h"
+__ANY(__in1_anyint_)
+# 1044 "iec_std_functions.h"
+__ANY_NBIT(__iec_)
+__ANY_NUM(__iec_)
+
+
+
+
+
+
+__ANY_DATE(__iec_)
+static inline BOOL GT_TIME(BOOL EN, BOOL *ENO, UINT param_count, TIME op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("GT_TIME" "TIME" "\n") DBG_TYPE(TIME, op1) for (i = 0; i < param_count - 1; i++){ TIME tmp = va_arg (ap, TIME); DBG_TYPE(TIME, tmp) if(__time_cmp(op1, tmp) > 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;} static inline BOOL GT__BOOL__TIME(BOOL EN, BOOL *ENO, UINT param_count, TIME op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("GT__BOOL__TIME" "TIME" "\n") DBG_TYPE(TIME, op1) for (i = 0; i < param_count - 1; i++){ TIME tmp = va_arg (ap, TIME); DBG_TYPE(TIME, tmp) if(__time_cmp(op1, tmp) > 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;}
+
+
+
+static inline BOOL GT_STRING(BOOL EN, BOOL *ENO, UINT param_count, STRING op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("GT_STRING" "STRING" "\n") DBG_TYPE(STRING, op1) for (i = 0; i < param_count - 1; i++){ STRING tmp = va_arg (ap, STRING); DBG_TYPE(STRING, tmp) if(memcmp((char*)&op1.body,(char*)&tmp.body, op1.len < tmp.len ? op1.len : tmp.len) > 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;}
+static inline BOOL GT__BOOL__STRING(BOOL EN, BOOL *ENO, UINT param_count, STRING op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("GT__BOOL__STRING" "STRING" "\n") DBG_TYPE(STRING, op1) for (i = 0; i < param_count - 1; i++){ STRING tmp = va_arg (ap, STRING); DBG_TYPE(STRING, tmp) if(memcmp((char*)&op1.body,(char*)&tmp.body, op1.len < tmp.len ? op1.len : tmp.len) > 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;}
+# 1067 "iec_std_functions.h"
+__ANY_NBIT(__iec_)
+__ANY_NUM(__iec_)
+
+
+
+
+
+
+__ANY_DATE(__iec_)
+static inline BOOL GE_TIME(BOOL EN, BOOL *ENO, UINT param_count, TIME op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("GE_TIME" "TIME" "\n") DBG_TYPE(TIME, op1) for (i = 0; i < param_count - 1; i++){ TIME tmp = va_arg (ap, TIME); DBG_TYPE(TIME, tmp) if(__time_cmp(op1, tmp) >= 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;} static inline BOOL GE__BOOL__TIME(BOOL EN, BOOL *ENO, UINT param_count, TIME op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("GE__BOOL__TIME" "TIME" "\n") DBG_TYPE(TIME, op1) for (i = 0; i < param_count - 1; i++){ TIME tmp = va_arg (ap, TIME); DBG_TYPE(TIME, tmp) if(__time_cmp(op1, tmp) >= 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;}
+
+
+
+static inline BOOL GE_STRING(BOOL EN, BOOL *ENO, UINT param_count, STRING op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("GE_STRING" "STRING" "\n") DBG_TYPE(STRING, op1) for (i = 0; i < param_count - 1; i++){ STRING tmp = va_arg (ap, STRING); DBG_TYPE(STRING, tmp) if(memcmp((char*)&op1.body,(char*)&tmp.body, op1.len < tmp.len ? op1.len : tmp.len) >= 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;}
+static inline BOOL GE__BOOL__STRING(BOOL EN, BOOL *ENO, UINT param_count, STRING op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("GE__BOOL__STRING" "STRING" "\n") DBG_TYPE(STRING, op1) for (i = 0; i < param_count - 1; i++){ STRING tmp = va_arg (ap, STRING); DBG_TYPE(STRING, tmp) if(memcmp((char*)&op1.body,(char*)&tmp.body, op1.len < tmp.len ? op1.len : tmp.len) >= 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;}
+# 1092 "iec_std_functions.h"
+__ANY_NBIT(__iec_)
+__ANY_NUM(__iec_)
+
+
+
+
+
+
+__ANY_DATE(__iec_)
+static inline BOOL EQ_TIME(BOOL EN, BOOL *ENO, UINT param_count, TIME op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("EQ_TIME" "TIME" "\n") DBG_TYPE(TIME, op1) for (i = 0; i < param_count - 1; i++){ TIME tmp = va_arg (ap, TIME); DBG_TYPE(TIME, tmp) if(__time_cmp(op1, tmp) == 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;} static inline BOOL EQ__BOOL__TIME(BOOL EN, BOOL *ENO, UINT param_count, TIME op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("EQ__BOOL__TIME" "TIME" "\n") DBG_TYPE(TIME, op1) for (i = 0; i < param_count - 1; i++){ TIME tmp = va_arg (ap, TIME); DBG_TYPE(TIME, tmp) if(__time_cmp(op1, tmp) == 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;}
+
+
+
+static inline BOOL EQ_STRING(BOOL EN, BOOL *ENO, UINT param_count, STRING op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("EQ_STRING" "STRING" "\n") DBG_TYPE(STRING, op1) for (i = 0; i < param_count - 1; i++){ STRING tmp = va_arg (ap, STRING); DBG_TYPE(STRING, tmp) if(memcmp((char*)&op1.body,(char*)&tmp.body, op1.len < tmp.len ? op1.len : tmp.len) == 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;}
+static inline BOOL EQ__BOOL__STRING(BOOL EN, BOOL *ENO, UINT param_count, STRING op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("EQ__BOOL__STRING" "STRING" "\n") DBG_TYPE(STRING, op1) for (i = 0; i < param_count - 1; i++){ STRING tmp = va_arg (ap, STRING); DBG_TYPE(STRING, tmp) if(memcmp((char*)&op1.body,(char*)&tmp.body, op1.len < tmp.len ? op1.len : tmp.len) == 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;}
+# 1116 "iec_std_functions.h"
+__ANY_NBIT(__iec_)
+__ANY_NUM(__iec_)
+
+
+
+
+
+
+__ANY_DATE(__iec_)
+static inline BOOL LT_TIME(BOOL EN, BOOL *ENO, UINT param_count, TIME op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("LT_TIME" "TIME" "\n") DBG_TYPE(TIME, op1) for (i = 0; i < param_count - 1; i++){ TIME tmp = va_arg (ap, TIME); DBG_TYPE(TIME, tmp) if(__time_cmp(op1, tmp) < 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;} static inline BOOL LT__BOOL__TIME(BOOL EN, BOOL *ENO, UINT param_count, TIME op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("LT__BOOL__TIME" "TIME" "\n") DBG_TYPE(TIME, op1) for (i = 0; i < param_count - 1; i++){ TIME tmp = va_arg (ap, TIME); DBG_TYPE(TIME, tmp) if(__time_cmp(op1, tmp) < 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;}
+
+
+
+static inline BOOL LT_STRING(BOOL EN, BOOL *ENO, UINT param_count, STRING op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("LT_STRING" "STRING" "\n") DBG_TYPE(STRING, op1) for (i = 0; i < param_count - 1; i++){ STRING tmp = va_arg (ap, STRING); DBG_TYPE(STRING, tmp) if(memcmp((char*)&op1.body,(char*)&tmp.body, op1.len < tmp.len ? op1.len : tmp.len) < 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;}
+static inline BOOL LT__BOOL__STRING(BOOL EN, BOOL *ENO, UINT param_count, STRING op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("LT__BOOL__STRING" "STRING" "\n") DBG_TYPE(STRING, op1) for (i = 0; i < param_count - 1; i++){ STRING tmp = va_arg (ap, STRING); DBG_TYPE(STRING, tmp) if(memcmp((char*)&op1.body,(char*)&tmp.body, op1.len < tmp.len ? op1.len : tmp.len) < 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;}
+# 1140 "iec_std_functions.h"
+__ANY_NBIT(__iec_)
+__ANY_NUM(__iec_)
+
+
+
+
+
+
+__ANY_DATE(__iec_)
+static inline BOOL LE_TIME(BOOL EN, BOOL *ENO, UINT param_count, TIME op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("LE_TIME" "TIME" "\n") DBG_TYPE(TIME, op1) for (i = 0; i < param_count - 1; i++){ TIME tmp = va_arg (ap, TIME); DBG_TYPE(TIME, tmp) if(__time_cmp(op1, tmp) <= 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;} static inline BOOL LE__BOOL__TIME(BOOL EN, BOOL *ENO, UINT param_count, TIME op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("LE__BOOL__TIME" "TIME" "\n") DBG_TYPE(TIME, op1) for (i = 0; i < param_count - 1; i++){ TIME tmp = va_arg (ap, TIME); DBG_TYPE(TIME, tmp) if(__time_cmp(op1, tmp) <= 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;}
+
+
+
+static inline BOOL LE_STRING(BOOL EN, BOOL *ENO, UINT param_count, STRING op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("LE_STRING" "STRING" "\n") DBG_TYPE(STRING, op1) for (i = 0; i < param_count - 1; i++){ STRING tmp = va_arg (ap, STRING); DBG_TYPE(STRING, tmp) if(memcmp((char*)&op1.body,(char*)&tmp.body, op1.len < tmp.len ? op1.len : tmp.len) <= 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;}
+static inline BOOL LE__BOOL__STRING(BOOL EN, BOOL *ENO, UINT param_count, STRING op1, ...){ va_list ap; UINT i; if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); va_start (ap, op1); DBG("LE__BOOL__STRING" "STRING" "\n") DBG_TYPE(STRING, op1) for (i = 0; i < param_count - 1; i++){ STRING tmp = va_arg (ap, STRING); DBG_TYPE(STRING, tmp) if(memcmp((char*)&op1.body,(char*)&tmp.body, op1.len < tmp.len ? op1.len : tmp.len) <= 0){ op1 = tmp; }else{ va_end (ap); return 0; } } va_end (ap); return 1;}
+# 1182 "iec_std_functions.h"
+__ANY_NBIT(__iec_)
+__ANY_NUM(__iec_)
+
+
+
+
+
+
+__ANY_DATE(__iec_)
+static inline BOOL NE_TIME(BOOL EN, BOOL *ENO, TIME op1, TIME op2){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return __time_cmp(op1, op2) != 0 ? 1 : 0;} static inline BOOL NE__BOOL__TIME__TIME(BOOL EN, BOOL *ENO, TIME op1, TIME op2){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return __time_cmp(op1, op2) != 0 ? 1 : 0;}
+
+
+
+static inline BOOL NE_STRING(BOOL EN, BOOL *ENO, STRING op1, STRING op2){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return memcmp((char*)&op1.body,(char*)&op2.body, op1.len < op2.len ? op1.len : op2.len) != 0 ? 1 : 0;}
+static inline BOOL NE__BOOL__STRING__STRING(BOOL EN, BOOL *ENO, STRING op1, STRING op2){ if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_BOOL; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE); return memcmp((char*)&op1.body,(char*)&op2.body, op1.len < op2.len ? op1.len : op2.len) != 0 ? 1 : 0;}
+# 1224 "iec_std_functions.h"
+static inline __strlen_t __len(STRING IN) {return IN.len;}
+# 1234 "iec_std_functions.h"
+__ANY_INT(__iec_)
+# 1252 "iec_std_functions.h"
+__ANY_INT(__left)
+# 1269 "iec_std_functions.h"
+__ANY_INT(__right)
+# 1289 "iec_std_functions.h"
+__ANY_INT(__mid)
+
+
+
+
+
+
+static inline STRING CONCAT(BOOL EN, BOOL *ENO, UINT param_count, ...){
+  UINT i;
+  STRING res;
+  va_list ap;
+  __strlen_t charcount;
+  if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_STRING; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE);
+  charcount = 0;
+  res = __INIT_STRING;
+
+  va_start (ap, param_count);
+
+  for (i = 0; i < param_count && charcount < STR_MAX_LEN; i++)
+  {
+    STRING tmp = va_arg(ap, STRING);
+    __strlen_t charrem = STR_MAX_LEN - charcount;
+    __strlen_t to_write = tmp.len > charrem ? charrem : tmp.len;
+    memcpy(&res.body[charcount], &tmp.body , to_write);
+    charcount += to_write;
+  }
+
+  res.len = charcount;
+
+  va_end (ap);
+  return res;
+}
+
+
+
+
+
+static inline STRING __insert(STRING IN1, STRING IN2, __strlen_t P){
+    STRING res;
+    __strlen_t to_copy;
+    res = __INIT_STRING;
+
+    to_copy = P > IN1.len ? IN1.len : P;
+    memcpy(&res.body, &IN1.body , to_copy);
+    P = res.len = to_copy;
+
+    to_copy = IN2.len + res.len > STR_MAX_LEN ? STR_MAX_LEN - res.len : IN2.len;
+    memcpy(&res.body[res.len], &IN2.body , to_copy);
+    res.len += to_copy;
+
+    to_copy = IN1.len - P < STR_MAX_LEN - res.len ? IN1.len - P : STR_MAX_LEN - res.len ;
+    memcpy(&res.body[res.len], &IN1.body[P] , to_copy);
+    res.len += to_copy;
+
+    return res;
+}
+
+
+
+
+
+
+__ANY_INT(__iec_)
+
+
+
+
+
+
+
+static inline STRING __delete(STRING IN, __strlen_t L, __strlen_t P){
+    STRING res;
+    __strlen_t to_copy;
+    res = __INIT_STRING;
+
+    to_copy = P > IN.len ? IN.len : P-1;
+    memcpy(&res.body, &IN.body , to_copy);
+    P = res.len = to_copy;
+
+    if( IN.len > P + L ){
+        to_copy = IN.len - P - L;
+        memcpy(&res.body[res.len], &IN.body[P + L], to_copy);
+        res.len += to_copy;
+    }
+
+    return res;
+}
+
+
+
+
+
+
+__ANY_INT(__iec_)
+
+
+
+
+
+
+
+static inline STRING __replace(STRING IN1, STRING IN2, __strlen_t L, __strlen_t P){
+    STRING res;
+    __strlen_t to_copy;
+    res = __INIT_STRING;
+
+    to_copy = P > IN1.len ? IN1.len : P-1;
+    memcpy(&res.body, &IN1.body , to_copy);
+    P = res.len = to_copy;
+
+    to_copy = IN2.len < L ? IN2.len : L;
+
+    if( to_copy + res.len > STR_MAX_LEN )
+       to_copy = STR_MAX_LEN - res.len;
+
+    memcpy(&res.body[res.len], &IN2.body , to_copy);
+    res.len += to_copy;
+
+    P += L;
+    if( res.len < STR_MAX_LEN && P < IN1.len)
+    {
+        to_copy = IN1.len - P;
+        memcpy(&res.body[res.len], &IN1.body[P] , to_copy);
+        res.len += to_copy;
+    }
+
+    return res;
+}
+
+
+
+
+
+
+__ANY_INT(__iec_)
+
+
+
+
+
+
+static inline __strlen_t __pfind(STRING* IN1, STRING* IN2){
+    UINT count1 = 0;
+    UINT count2 = 0;
+    while(count1 + count2 < IN1->len && count2 < IN2->len)
+    {
+        if(IN1->body[count1 + count2] != IN2->body[count2]){
+            count1 += count2 + 1;
+            count2 = 0;
+        }
+        else {
+            count2++;
+        }
+    }
+    return count2 == IN2->len -1 ? 0 : count1 + 1;
+}
+
+
+
+
+
+
+__ANY_INT(__iec_)
+# 1467 "iec_std_functions.h"
+static inline TIME ADD_TIME(BOOL EN, BOOL *ENO, TIME IN1, TIME IN2){
+  if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_TIME; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE);
+  return __time_add(IN1, IN2);
+}
+
+static inline TOD ADD_TOD_TIME(BOOL EN, BOOL *ENO, TOD IN1, TIME IN2){
+  if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_TOD; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE);
+  return __time_add(IN1, IN2);
+}
+
+static inline DT ADD_DT_TIME(BOOL EN, BOOL *ENO, DT IN1, TIME IN2){
+  if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_DT; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE);
+  return __time_add(IN1, IN2);
+}
+
+static inline TIME SUB_TIME(BOOL EN, BOOL *ENO, TIME IN1, TIME IN2){
+  if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_TIME; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE);
+  return __time_sub(IN1, IN2);
+}
+
+static inline TIME SUB_DATE_DATE(BOOL EN, BOOL *ENO, DATE IN1, DATE IN2){
+  if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_TIME; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE);
+  return __time_sub(IN1, IN2);
+}
+
+static inline TOD SUB_TOD_TIME(BOOL EN, BOOL *ENO, TOD IN1, TIME IN2){
+  if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_TOD; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE);
+  return __time_sub(IN1, IN2);
+}
+
+static inline TIME SUB_TOD_TOD(BOOL EN, BOOL *ENO, TOD IN1, TOD IN2){
+  if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_TIME; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE);
+  return __time_sub(IN1, IN2);
+}
+
+static inline DT SUB_DT_TIME(BOOL EN, BOOL *ENO, DT IN1, TIME IN2){
+  if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_DT; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE);
+  return __time_sub(IN1, IN2);
+}
+
+static inline TIME SUB_DT_DT(BOOL EN, BOOL *ENO, DT IN1, DT IN2){
+  if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_TIME; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE);
+  return __time_sub(IN1, IN2);
+}
+# 1519 "iec_std_functions.h"
+__ANY_NUM(__iec_)
+# 1528 "iec_std_functions.h"
+__ANY_NUM(__iec_)
+# 1537 "iec_std_functions.h"
+__ANY_NUM(__iec_)
+# 1546 "iec_std_functions.h"
+__ANY_NUM(__iec_)
+
+
+
+static inline DT CONCAT_DATE_TOD(BOOL EN, BOOL *ENO, DATE IN1, TOD IN2){
+  if (!EN) { if (ENO != NULL) *ENO = __BOOL_LITERAL(FALSE); return __INIT_DT; } else if (ENO != NULL) *ENO = __BOOL_LITERAL(TRUE);
+  return __time_add(IN1, IN2);
+}
